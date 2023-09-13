@@ -4,7 +4,7 @@ import React from 'react'
 
 function Header() {
   return (
-<nav className='bg-purple-900 h-16 fixed top-0 w-screen  flex justify-between items-center '>
+<nav className='bg-purple-900 h-16 fixed top-0 w-screen  flex justify-between items-center z-50 '>
 <div>
   <h3 className='text-neutral-50 '>
 
