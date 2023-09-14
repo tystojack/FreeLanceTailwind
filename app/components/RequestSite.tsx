@@ -2,15 +2,28 @@
 import React from 'react'
 import { useState } from 'react'
 function RequestSite() {
-    const [open,setOpen] = useState(false);
+    const [open,setOpen] = useState('invisible');
+    console.log(open, "the open state")
+    const OpenModal = (event: any) => {
+      event.stopPropagation();
+      console.log('open clicked')
+     setOpen("animate-fadeIn")
+    };
+    const StopProp = (event: any)=> {
+event.stopPropagation();
+    }
+    const WrapClicked = ()=> {
+      console.log("wrapp clicked")
+      setOpen("animate-fadeOut pointer-events-none");
+    }
   return (
     <div className='flex items-center justify-center pb-10'>
         <div>
 
         </div>
-        <div className=' z-20 position fixed flex justify-center items-center top-0 h-screen w-screen '>
-            <div className='h-96 max-w-2xl bg-purple-600 w-5/6 min-h-fit  flex justify-around center items-center flex-col absolute'>
-                <button className='bg-slate-900 fill-current absolute text-stone-50 h-10 w-10  right-0 top-0'>
+        <div onClick={WrapClicked} className={`${open} fill-mode-forwards z-20 position fixed flex justify-center items-center top-0 h-screen w-screen`}>
+            <div onClick={e=> StopProp(e)}  className={ ` h-96 max-w-2xl bg-purple-600 w-5/6 min-h-fit  flex justify-around center items-center flex-col absolute `}>
+                <button onClick={WrapClicked} className='bg-slate-900 fill-current absolute text-stone-50 h-10 w-10  right-0 top-0'>
                 <svg xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
   <path  stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
 </svg>
@@ -27,7 +40,7 @@ function RequestSite() {
 </div>
                 </div>
         </div>
-        <button onClick={()=> setOpen(true)} className='text-stone-50 bg-purple-600  text-2xl rounded-md  p-3 bord font-semibold '>Request Website</button>
+        <button onClick={(e)=> OpenModal(e)} className='text-stone-50 bg-purple-600   text-2xl rounded-md  p-3 bord font-semibold '>Request Website</button>
     </div>
   )
 }
