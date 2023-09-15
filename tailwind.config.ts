@@ -22,6 +22,10 @@ const config: Config = {
           visibility: "invisible"
         }
         },
+        OpenDrawer: {
+"0%": {transform: "translateX(75vw)"},
+"100%": {transform: "translateX(0px)"}
+        },
         wiggle: {
           "0%, 100%": { transform: "rotate(-3deg)" },
           "50%": { transform: "rotate(3deg)" }
@@ -30,7 +34,8 @@ const config: Config = {
     animation: {
       wiggle: "wiggle 200ms ease-in-out",
       fadeIn: "fadeIn 200ms ease-in-out forwards",
-      fadeOut: "fadeOut 200ms ease-in-out forwards"
+      fadeOut: "fadeOut 200ms ease-in-out forwards",
+      OpenDrawer: "OpenDrawer 600ms ease-in-out forwards"
     }
 
 
