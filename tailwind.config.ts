@@ -26,6 +26,10 @@ const config: Config = {
 "0%": {transform: "translateX(75vw)"},
 "100%": {transform: "translateX(0px)"}
         },
+        CloseDrawer: {
+          "0%": {transform: "translateX(0px)"},
+"100%": {transform: "translateX(75vw)"}
+        },
         wiggle: {
           "0%, 100%": { transform: "rotate(-3deg)" },
           "50%": { transform: "rotate(3deg)" }
@@ -35,7 +39,8 @@ const config: Config = {
       wiggle: "wiggle 200ms ease-in-out",
       fadeIn: "fadeIn 200ms ease-in-out forwards",
       fadeOut: "fadeOut 200ms ease-in-out forwards",
-      OpenDrawer: "OpenDrawer 600ms ease-in-out forwards"
+      OpenDrawer: "OpenDrawer 600ms ease-in-out forwards",
+      CloseDrawer: "CloseDrawer 600ms ease-in-out forwards"
     }
 
 

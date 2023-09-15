@@ -6,8 +6,9 @@ function Header() {
   return (
 <nav className='bg-purple-900 h-16 fixed top-0 w-screen  flex justify-between items-center z-50 '>
 <div className='h-3/4 w-48 '>
-
+<Link href="/">
     <img className='object-contain max-h-full ml-4 border rounded-3xl  ' src="C.png"/>
+</Link>
     
 
 </div>
@@ -24,8 +25,16 @@ function Header() {
    about
    </Link>
     </h3>
-  <h3 className='text-neutral-50'>Product Page</h3>
-  <h3 className='text-neutral-50'>Image Slider</h3> 
+  <h3 className='text-neutral-50'>
+    <Link href="/ProductPage">
+    Product Page
+    </Link>
+    </h3>
+  <h3 className='text-neutral-50'>
+    <Link href='/ImageSlider'>
+    Image Slider
+    </Link>
+    </h3> 
 </div>
 </nav>
   )
